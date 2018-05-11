@@ -1,0 +1,6 @@
+<div class="btn-group btn-group-justified btn-group-lg">
+  <a href="#" *ngFor="let c of availableUnits" class="btn btn-primary" [style.backgroundColor]="getColorForUnit(c)">{{c}}</a>
+</div>
+<div class="list-group">
+  <a class="list-group-item list-group-item-success" *ngFor="let job of listOfAlarmedJobs" (click)="updateAlarmedUnits(job)">{{job.jobType}}: {{job.adress}}, {{job.description}}</a>
+</div>

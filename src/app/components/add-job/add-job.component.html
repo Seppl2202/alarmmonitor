@@ -1,0 +1,32 @@
+<flash-messages></flash-messages>
+<div class="container">
+  <h1>Neuen Einsatz erstellen</h1>
+  <form>
+    <div class="form-group radio">
+      <label><input type="radio" name="jobtype"value="FEUER" [(ngModel)]="jobType">Feuer</label>
+      <label><input type="radio" name="jobtype" value="TECHNISCHE_HILFE" [(ngModel)]="jobType">Technische Hilfe</label>
+      <label><input type="radio" name="jobtype" value="SONSTIGE" [(ngModel)]="jobType">Sonstiges</label>
+    </div>
+    <div class="form-group">
+      <label for="description">Name/Beschreibung:</label>
+      <input type="text" class="form-control" id="description" name="description" required [(ngModel)]="description">
+    </div>
+
+    <div class="form-group">
+      <label for="adress">Adresse:</label>
+      <input type="text" class="form-control" id="adress" name="adress" required [(ngModel)]="adress">
+    </div>
+    <div class="form-group">
+      <label for="reporter">Melder:</label>
+      <input type="text" class="form-control" id="reporter" name="reporter" required [(ngModel)]="reporter">
+    </div>
+      <label for="alarmedUnits">Fahrzeuge:</label>
+    <div class="form-group checkbox" id = "alarmedUnits">
+      <label><input type="checkbox" value="LF1612" name="LF1612" (click)="addUnit($event)">LF16/12</label>
+      <label><input type="checkbox" value="LF16TS" name="LF16TS" (click)="addUnit($event)">LF16-TS</label>
+      <label><input type="checkbox" value="RW" name="RW" (click)="addUnit($event)">RW</label>
+      <label><input type="checkbox" value="MTW" name="MTW" (click)="addUnit($event)">MTW</label>
+    </div>
+    <button type="submit" class="btn btn-success" (click)="submitForm()">Erstellen</button>
+  </form>
+</div>

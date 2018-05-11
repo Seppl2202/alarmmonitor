@@ -1,0 +1,5 @@
+<flash-messages></flash-messages>
+<div class="list-group">
+  <a href="#" class="list-group-item" [ngClass]="{'list-group-item-success': job.running==true, 'list-group-item-danger': job.running==false}" *ngFor="let job of listOfJobs">{{job.jobType}}: {{job.adress}}, {{job.description}} <button type="submit" class="btn btn-success" (click)="alarmUnits(job)">Alarmieren!</button></a>
+</div>
+
